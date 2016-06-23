@@ -61,6 +61,7 @@ RUN   localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF
 RUN   gem install compass --no-ri --no-rdoc
 RUN   gem install --pre sass-css-importer
 ENV   LANG en_US.utf8
+RUN	  npm config set unsafe-perm true
 RUN   npm i -g ember-cli@2.4.1 bower phantomjs@1.9.19
 RUN \
 	git clone https://github.com/facebook/watchman.git &&\
