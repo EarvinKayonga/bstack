@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		bzip2 \
 		unzip \
 		xz-utils \
+		apt-utils	\
 		zip		\
 		git		\
 		subversion \
@@ -64,6 +65,7 @@ RUN \
 
 RUN   apt-get update && apt-get -y install python python-pip ruby-dev ruby locales
 RUN   localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+RUN		gem update --no-ri --no-rdoc
 RUN   gem install compass --no-ri --no-rdoc
 RUN   gem install --pre sass-css-importer
 ENV   LANG en_US.utf8
