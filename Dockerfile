@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		git		\
 		subversion \
 		emacs nano \
+		curl	wget \
+		nmap			\
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
@@ -66,7 +68,9 @@ RUN   gem install compass --no-ri --no-rdoc
 RUN   gem install --pre sass-css-importer
 ENV   LANG en_US.utf8
 RUN	  npm config set unsafe-perm true
-RUN   npm i -g ember-cli@2.4.1 bower phantomjs@1.9.19
+RUN		npm i -g phantomjs@1.9.19
+RUN		npm i -g bower
+RUN   npm i -g ember-cli@2.4.1
 RUN \
 	git clone https://github.com/facebook/watchman.git &&\
 	cd watchman &&\
